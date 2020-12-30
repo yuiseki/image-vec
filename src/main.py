@@ -1,3 +1,4 @@
+import os
 import io
 import json
 import base64
@@ -40,3 +41,7 @@ def vector():
     return jsonify({
         'content_vector': json.dumps(content_vector, cls=NumPyEncoder)
     })
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
