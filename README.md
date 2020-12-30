@@ -7,7 +7,17 @@ pytest
 
 ## Run server
 ```
-export FLASK_APP="src/main.py" && flask run
+python src/main.py
+```
+
+## Build Docker image
+```
+./build.sh
+```
+
+## Run server by Docker image
+```
+docker run -it yuiseki/image-vec
 ```
 
 ## API
@@ -25,3 +35,14 @@ export FLASK_APP="src/main.py" && flask run
         - string of base64 encoded image binary
     - response type
       - `application/json`
+
+## ToDo
+- エラー処理
+  - GET
+    - 200以外のURLだったらエラーを返す
+    - 画像以外の場合はエラーを返す
+    - 巨大すぎる画像の場合はエラーを返す
+  - POST
+    - base64 decodeに失敗したらエラーを返す
+- 学習モデルを選択できるようにする
+
