@@ -1,0 +1,6 @@
+pillow
+numpy
+flask
+requests
+img2vec_pytorch
+pytest
